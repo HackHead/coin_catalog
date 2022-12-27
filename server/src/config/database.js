@@ -43,7 +43,7 @@ const [
 const storage = new Sequelize(database, user, password, {
     host: host,
     port: port,
-    dialect: 'postgres',
+    dialect: 'mysql',
     operatorsAliases: {
         $lte: Op.lte,
         $gte: Op.gte,

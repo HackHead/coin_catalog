@@ -114,20 +114,14 @@ export default class BaseController {
             if(text){
                 coinWhereStatment.$or = [
                     {
-                        name: {
-                            $like: `%${text}%`
-                        },
+                        name: Sequelize.where(Sequelize.fn('LOWER', Sequelize.col('Coin.name')), 'LIKE', '%' + text.toLowerCase() + '%')
                     },
                     {
-                        subtitle: {
-                            $like: `%${text}%`
-                        },
+                        subtitle: Sequelize.where(Sequelize.fn('LOWER', Sequelize.col('Coin.subtitle')), 'LIKE', '%' + text.toLowerCase() + '%')
                     },
                     {
-                        description: {
-                            $like: `%${text}%`
-                        },
-                    }     
+                        description: Sequelize.where(Sequelize.fn('LOWER', Sequelize.col('Coin.description')), 'LIKE', '%' + text.toLowerCase() + '%')
+                    }    
                 ]
             }
             if(category) categoryWhereStatment.id = category;

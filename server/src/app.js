@@ -10,6 +10,11 @@ import Country from './models/Country.js';
 import Metal from './models/Metal.js';
 import Quality from './models/Quality.js';
 import Coin from './models/Coin.js';
+import dotenv from 'dotenv';
+
+dotenv.config({
+    path: path.join(path.resolve(), 'src/config/.env')
+})
 
 class App {
     constructor() {

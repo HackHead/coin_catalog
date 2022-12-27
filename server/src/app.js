@@ -44,6 +44,8 @@ class App {
                     await Metal.bulkCreate(_metals);
                     await Quality.bulkCreate(_qualities);
                     await Coin.bulkCreate(_coins);
+
+                    console.log('БАЗА ДАННЫХ УСПЕШНО ЗАПОЛНЕНА!')
                 } catch (error) {
                     console.log('Возможно база данных уже заполнена!')
                     console.log(error)

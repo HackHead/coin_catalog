@@ -1,31 +1,34 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
-import { AdvancedFilter } from '../components/AdvancedFilter';
 import { CoinCard } from '../components/CoinCard';
 import { Filters } from '../components/Filters';
 
 export function Catalog() {
     const host = process.env.REACT_APP_SERVER_HOST;
+
     const [filterIsVisible, setFilterVisibility] = useState(false);
-    const [searchText, setSearchText] = useState('');
     const [coins, updateCoins] = useState([]);
     const [searchParams, setSearchParams] = useSearchParams();
     const navigate = useNavigate();
 
+    
     useEffect(() => {
         (async () => {
+            // Подгружаем только те монеты которые соотвествуют выбранной нами категории
             const category = searchParams.get("category")
             const coins = await axios.get(`${host}/api/coin${category ? `?category=${category}`: ''}`)
             updateCoins(coins?.data?.data)
         })();
     }, []);
+
     const fetchUpdatedData = async (queryString) => {
+        // Функция выполняется каждый раз, когда происходит изменение фильтра
         const updatedCoins = await axios.get(`${host}/api/coin?${queryString}`)
-        console.log(queryString);
         updateCoins(updatedCoins?.data?.data)
     }
     const sendForm = (queryString) => {
+        // Функция выполняется, после нажатия кнопки Search
         navigate(`/catalog?${queryString}`)
     } 
     return (

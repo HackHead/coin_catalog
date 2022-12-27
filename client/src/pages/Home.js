@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import { AdvancedFilter } from '../components/AdvancedFilter';
 import { Filters } from '../components/Filters';
 
 export function Home() {
     const host = process.env.REACT_APP_SERVER_HOST;
+    
     const [filterIsVisible, setFilterVisibility] = useState(false);
     const [coins, updateCoins] = useState([]);
     const [categories, updateCategories] = useState([]);
@@ -13,7 +13,6 @@ export function Home() {
 
     const fetchUpdatedData = async (queryString) => {
         const updatedCoins = await axios.get(`${host}/api/coin?${queryString}`)
-        console.log(queryString);
         updateCoins(updatedCoins?.data?.data)
     }
 

@@ -28,7 +28,5 @@ Category.init({
 }
 
 );
-(async () => {
-    await Category.sync();
-})();
+await Category.sync();
 export default Category;

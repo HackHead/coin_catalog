@@ -10,19 +10,23 @@ import path from 'path';
  * создание, редактирование, удаление таблиц из базы данных и тд...
 */
 
+// Создаем объект конфигурации
 const storage = new Sequelize({
     dialect: 'sqlite',
-    storage: path.join(path.resolve(), '/src/config/dev.sqlite'),
+    storage: path.join(path.resolve(), '/src/data/dev.sqlite'),
     operatorsAliases: {
         $lte: Op.lte,
         $gte: Op.gte,
         $not: Op.not,
         $like: Op.like,
+        $eq: Op.eq,
+        $or: Op.or
     }
 });
 
 (async () => {
     try {
+        // Авторизируемся в базе данных
         if (storage) await storage.authenticate();
         console.log('Соединение с базой данных успешно установлено...');
     } catch (error) {

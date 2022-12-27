@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export function CoinCard({id, img, name, description}){
+export function CoinCard({id, img, name, subtitle}){
     return (
         <div className="rounded-lg p-8 lg:col-span-2 lg:p-8 flex">
             <img src={img} width="150"/>
@@ -10,7 +10,7 @@ export function CoinCard({id, img, name, description}){
                 </Link>
 
                 <p className="mt-2 max-w-sm text-gray-700 italic" style={{ letterSpacing: '0.04rem' }}>
-                    {description.slice(0, 64)}...
+                    {subtitle}...
                 </p>
             </div>
 

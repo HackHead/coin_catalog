@@ -20,6 +20,10 @@ Coin.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
+    subtitle: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+    },
     description: {
         type: DataTypes.TEXT,
         allowNull: false,
@@ -75,9 +79,7 @@ Coin.init({
 
 );
 
-(async () => {
-    await Coin.sync();
-})();
+Coin.sync();
 
 Coin.belongsTo(Category, {foreignKey: {name: 'category'}});
 Coin.belongsTo(Country, {foreignKey: {name: 'issuing_country'}});

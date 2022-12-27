@@ -25,6 +25,9 @@ export function Coin() {
                         <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
                             <h1 className="text-2xl font-bold sm:text-3xl">{coin.name}</h1>
                             <p className="max-w-xl text-lg py-6">
+                                {coin.subtitle}
+                            </p>
+                            <p className="max-w-xl text-lg py-4">
                                 {coin.description}
                             </p>
                             <div className="overflow-x-auto py-4">

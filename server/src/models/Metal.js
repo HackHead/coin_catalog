@@ -24,7 +24,5 @@ Metal.init({
 }
 
 );
-(async () => {
-    await Metal.sync();
-})();
+Metal.sync();
 export default Metal;

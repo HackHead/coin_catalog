@@ -24,7 +24,5 @@ Quality.init({
 }
 
 );
-(async () => {
-    await Quality.sync();
-})();
+Quality.sync();
 export default Quality;

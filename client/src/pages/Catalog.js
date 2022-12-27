@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { AdvancedFilter } from '../components/AdvancedFilter';
 import { CoinCard } from '../components/CoinCard';
 import { Filters } from '../components/Filters';
@@ -11,7 +11,7 @@ export function Catalog() {
     const [searchText, setSearchText] = useState('');
     const [coins, updateCoins] = useState([]);
     const [searchParams, setSearchParams] = useSearchParams();
-    
+    const navigate = useNavigate();
 
     useEffect(() => {
         (async () => {
@@ -25,6 +25,9 @@ export function Catalog() {
         console.log(queryString);
         updateCoins(updatedCoins?.data?.data)
     }
+    const sendForm = (queryString) => {
+        navigate(`/catalog?${queryString}`)
+    } 
     return (
         <div className="home view">
             <section className="max-h">
@@ -63,6 +66,7 @@ export function Catalog() {
                 <Filters 
                     onUpdate={fetchUpdatedData}
                     onChangeVisibility={setFilterVisibility}
+                    onSendForm={sendForm}
                     isVisible={filterIsVisible}
                 />
             </section>
@@ -77,7 +81,7 @@ export function Catalog() {
                                         key={coin.id}
                                         img={`${host}${coin.thumbnail_head}`}
                                         name={coin.name}
-                                        description={coin.description}
+                                        subtitle={coin.subtitle}
                                     />
                                    
                                 );

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { encodeQueryData } from "../utils";
 
-export function Filters({ onUpdate, isVisible, onChangeVisibility }) {
+export function Filters({ onUpdate, isVisible, onChangeVisibility, onSendForm }) {
     const host = process.env.REACT_APP_SERVER_HOST;
     const [queryString, setQueryString] = useState('');
 
@@ -123,7 +123,10 @@ export function Filters({ onUpdate, isVisible, onChangeVisibility }) {
     }, [queryString])
     return (
         <div>
-            <form >
+            <form onSubmit={(e) => {
+                e.preventDefault();
+                onSendForm(queryString)
+            }}>
                 <div className="grid gap-y-8 px-14 lg:grid-cols-10">
                     <div className="col-span-2">
                         <label className="sr-only" htmlFor="name">Name</label>
@@ -136,6 +139,7 @@ export function Filters({ onUpdate, isVisible, onChangeVisibility }) {
                             onInput={(e) => {
                                 setFilterText(e.target.value)
                             }}
+                            autoComplete="off"
                         />
                     </div>
                     <div className="col-span-1 mx-4">

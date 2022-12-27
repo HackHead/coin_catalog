@@ -24,7 +24,5 @@ Country.init({
 }
 
 );
-(async () => {
-    await Country.sync();
-})();
+Country.sync();
 export default Country;

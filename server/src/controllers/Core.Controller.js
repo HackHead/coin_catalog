@@ -7,9 +7,22 @@ import Coin from "../models/Coin.js";
 import Quality from "../models/Quality.js";
 import Metal from '../models/Metal.js'
 import Country from "../models/Country.js";
-
+/**
+ * Controller - это по сути обычный класс с функциями которые отвечают за
+ * обработку запроса к определенному эндпоинту. 
+ * 
+ * Например пользователь обращается по адресу htpp://localhost:7000/api/coin
+ * в этом случае будет выполнен метод класса BaseController - getCoin
+ * 
+ */
 export default class BaseController {
+    /**
+     * Метод для получения списка возможных металов 
+     */
     async getMetal(req, res) {
+
+        // Если мы передаем параметр id - метод возвращает метал из базы данных
+        // У которого такой же id
         if(req.params.id){
             const metal = await Metal.findOne({
                 where: {
@@ -18,10 +31,17 @@ export default class BaseController {
             })
             return res.json({data: metal})
         } else {
+            // Если мы не передаем параметр id - мы возвращаем  список всех доступных металов
             const metal = await Metal.findAll();
             return res.json({data: metal})
         }
+
+        // Методы getQuality,getCountry и getCategory работают по такому же принципу
     }
+
+    /**
+     * Метод для получения списка "качество чеканки"
+     */
     async getQuality(req, res) {
         if(req.params.id){
             const quality = await Quality.findOne({
@@ -35,6 +55,10 @@ export default class BaseController {
             return res.json({data: quality})
         }
     }
+
+    /**
+     * Метод для получения списка стран
+     */
     async getCountry(req, res) {
         if(req.params.id){
             const country = await Country.findOne({
@@ -49,29 +73,9 @@ export default class BaseController {
         }
     }
    
-    async fillSeed(req, res){
-        const _categories = seed.categories;
-        const _coins = seed.coins;
-        const _countries = seed.countries;
-        const _metals = seed.metals;
-        const _qualities = seed.qualities;
-
-        const categories = await Category.bulkCreate(_categories);
-        const countries = await Country.bulkCreate(_countries);
-        const metals = await Metal.bulkCreate(_metals);
-        const qualities = await Quality.bulkCreate(_qualities);
-        const coins = await Coin.bulkCreate(_coins);
-        
-        res.json({
-            data: {
-                coins,
-                categories,
-                countries,
-                metals,
-                qualities
-            },
-        });
-    }
+    /**
+     * Метод для получения списка монет металов 
+     */
     async getCoin(req, res) {
         if(req.params.id){
             const coin = await Coin.findByPk(+req.params.id, {
@@ -107,6 +111,25 @@ export default class BaseController {
                 text
             } = req.query;
 
+            if(text){
+                coinWhereStatment.$or = [
+                    {
+                        name: {
+                            $like: `%${text}%`
+                        },
+                    },
+                    {
+                        subtitle: {
+                            $like: `%${text}%`
+                        },
+                    },
+                    {
+                        description: {
+                            $like: `%${text}%`
+                        },
+                    }     
+                ]
+            }
             if(category) categoryWhereStatment.id = category;
             if(yearFrom || yearTo){
                 coinWhereStatment.year = {};
@@ -178,13 +201,5 @@ export default class BaseController {
         }
     }
 
-    // Этот контроллер создает новую категорию
-    async postCategory(req, res) {
-        const createdCategory = await Category.create({
-             name: req.body.name,
-             thumbnail: req.body.thumbnail,
-        });
-        res.json({data: createdCategory});
-    } 
    
 }

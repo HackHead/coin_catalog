@@ -1,11 +1,8 @@
-// Categories: Памятные монеты, Инвестиционные монеты, Эксклюзивные монеты
+
+// Эти данные будут использоваться для заполнения базы данных соотвественными значениями
 export default {
     categories: [
-        {
-            id: 1,
-            name: "Commemorative",
-            thumbnail: "/img/commemorative_coins_thumbnail.png",
-        },
+        { id: 1, name: "Commemorative", thumbnail: "/img/commemorative_coins_thumbnail.png",},
         { id: 2, name: "Bullion", thumbnail: "/img/bullion_coins_thumbnail.png" },
         { id: 3, name: "Eclusive", thumbnail: "/img/exclusive_coins_thumbnail.png" },
     ],
@@ -184,8 +181,8 @@ export default {
         // 3
         {
             name: "Kennedy",
-            description: `The unique coin is made in honor of the assassination of the 35th president of Texas.
-    
+            subtitle: `The unique coin is made in honor of the assassination of the 35th president of Texas.`,
+            description: `
             On November 22, 1963, in connection with the assassination of the 35th President John F. Kennedy in Dallas (Texas), it was decided to perpetuate the memory of President Kennedy on a coin.
             
             On the obverse to the right is a portrait of the 35th President of the United States, John F. Kennedy. Captions: FREEDOM / IN GOD WE TRUST / 1993.
@@ -207,8 +204,8 @@ export default {
         // 4
         {
             name: "Canadian Cent",
-            description: `"Canadian cent." A unique coin with the image of maple leaves - symbols of Canada. Face value - 1 cent.
-    
+            subtitle: `"Canadian cent." A unique coin with the image of maple leaves - symbols of Canada. Face value - 1 cent.`,
+            description: `
             On May 3, 2012, the Department of the Treasury of Canada announced the cessation of production of a 1 cent coin. The latest issues of the famous 1-cent maple leaf were minted in 2012.
             
             On the reverse, in the center of the coin are two maple leaves (the symbol of Canada), the year of issue is 2012 on the left. The upper part of the coin shows the denomination: 1 cent (1 cent), in the lower part of the inscription in a semicircle: CANADA.
@@ -230,8 +227,8 @@ export default {
         // 5
         {
             name: "A penny",
-            description: `"A penny". A unique coin with a shield image with 13 vertical stripes.
-    
+            subtitle: `"A penny". A unique coin with a shield image with 13 vertical stripes.`,
+            description: `
             Minted from 1793 to the present day.
             
             In 1959, on the 150th anniversary of the birth of Lincoln, the reverse design was changed. Instead of wheat spikelets, the image of the Lincoln Memorial was depicted on the coin. On the surviving copies you can see the image of the statue of the 16th American president between the columns. Coins of this type were minted in multi-billion copies until 2008.
@@ -256,7 +253,8 @@ export default {
         // 6
         {
             name: "25 cents",
-            description: `Unique coin depicting a caribou (reindeer). The face value of the coin is equal to a quarter of the Canadian dollar.
+            subtitle: `Unique coin depicting a caribou (reindeer). The face value of the coin is equal to a quarter of the Canadian dollar.`,
+            description: `
     
             The obverse depicts Queen Elizabeth II. The caribou (reindeer) is depicted on the reverse.
             
@@ -283,8 +281,8 @@ export default {
         // 7
         {
             name: "Dim Sum",
-            description: `Dim Sum is a 10-cent coin of the United States that has been minted from 1946 to the present. This is a unique coin with the image of a torch, oak and olive branches.
-    
+            subtitle: `Dim Sum is a 10-cent coin of the United States that has been minted from 1946 to the present. This is a unique coin with the image of a torch, oak and olive branches.`,
+            description: `
             The obverse of the coin depicts a portrait of the 32nd President of the United States, Franklin D. Roosevelt, and the reverse depicts a torch, oak and olive branches above the motto “E pluribus unum” - “Out of many.”
             
             After the death of Franklin Roosevelt in 1945, it was decided to put his image on a coin to perpetuate his memory. The choice of a coin denomination of 10 cents was due to the fact that in 1938 Roosevelt made a lot of efforts to create the National Fund Fund, which is half joking, and since 1979 it has been officially called the “March of ten cents”.
@@ -304,8 +302,8 @@ export default {
         // 8
         {
             name: "South Vietnamese Dong",
-            description: `Currency of the Republic of Vietnam in 1955-1975 Coin with the image of wheat.
-    
+            subtitle: `Currency of the Republic of Vietnam in 1955-1975 Coin with the image of wheat.`,
+            description: `
             Currency of the Republic of Vietnam in 1955-1975.
             
             On the front side, we see wheat, and on the back, a unit symbolizing money.
@@ -327,8 +325,8 @@ export default {
         // 9
         {
             name: "The British Antelope",
-            description: `Unique coin depicting an antelope. British South African gold coin with a face value of 1/2 pound. It has been produced since 1952.
-    
+            subtitle: `Unique coin depicting an antelope. British South African gold coin with a face value of 1/2 pound. It has been produced since 1952.`,
+            description: `
             On one side of the coin is the head of King George VI, turned to the left. Also at the top in a semicircle is the inscription GEORGIVS SEXTVS REX.
             
             On the other side of the coin is an Antelope. Around it is the inscription SOUTH AFRICA 1952 SUID AFRICA, dotted with dots. Below is the nominal value.
@@ -348,7 +346,8 @@ export default {
         // 10
         {
             name: "Cron",
-            description: `A unique coin depicting a Knorr Viking ship at sea.
+            subtitle: `A unique coin depicting a Knorr Viking ship at sea.`,
+            description: `
     
             Coin 1 crown was issued from August 1, 1934 to March 25, 1941, during the first period of Estonia’s independence.
             
@@ -375,7 +374,8 @@ export default {
         // 11
         {
             name: "Franc",
-            description: `Unique coin with the image of a walking elephant. "Frank" of the Belgian Congo.
+            subtitle: `Unique coin with the image of a walking elephant. "Frank" of the Belgian Congo.`,
+            description: `
     
             On the reverse of the coin in its central part there is an inscription in French: "2 francs" - 2 francs, framed by a five-pointed star. Along the edge from left to right there is an inscription in French and Dutch in two lines: “BANQUE DU CONGO BELGE”, “BANQUE VAN BELGISCH CONGO” - Bank of the Belgian Congo. The edge of the coin is decorated with decorative teeth.
             
@@ -396,7 +396,8 @@ export default {
         // 12
         {
             name: "Stork",
-            description: `Unique coin with the image of a flying stork. French coin at 2 two francs 1997.
+            subtitle: `Unique coin with the image of a flying stork. French coin at 2 two francs 1997.`,
+            description: `
     
             Two francs by Georges Gynemer - a commemorative coin of two French francs, issued in 1997 in honor of the famous pilot of the First World War, Georges Gynemer, on the occasion of the 80th anniversary of the officer cross of the Legion of Honor and his death: shot down in flight by a German plane.
             
@@ -421,7 +422,8 @@ export default {
         // 13
         {
             name: "Gyeonggi",
-            description: `"Gyeonggi". Coin with the image of five kangaroos - symbols of Australia.
+            subtitle: `"Gyeonggi". Coin with the image of five kangaroos - symbols of Australia.`,
+            description: `
     
             The first Australian coin with a nominal value of 1 dollar was introduced on May 13, 1984 to replace a one-dollar banknote.
             
@@ -448,7 +450,8 @@ export default {
         // 14
         {
             name: "Bolivian Peso",
-            description: `Boliviano Coin with the image of Bolivia.
+            subtitle: `Boliviano Coin with the image of Bolivia.`,
+            description: `
     
             By 1987, the Bolivian peso had completely depreciated and was replaced by a new boliviano during another monetary reform.
             
@@ -475,7 +478,8 @@ export default {
         // 15
         {
             name: "Botswana",
-            description: `"Botswana". Coin with the image of a bird.
+            subtitle: `"Botswana". Coin with the image of a bird.`,
+            description: `
     
             Coin of state of Botswana 1976.
             
@@ -500,7 +504,8 @@ export default {
         // 16
         {
             name: "Virginia",
-            description: `Virginia Coin with the image of a seahorse. Coin created during the reign of Elizabeth II.
+            subtitle: `Virginia Coin with the image of a seahorse. Coin created during the reign of Elizabeth II.`,
+            description: `
     
             The obverse depicts Her Majesty Queen Elizabeth II. At the top of the coin is the inscription British Virgin Islands Queen Elizabeth II 2014.
             
@@ -525,7 +530,8 @@ export default {
         // 17
         {
             name: "Theobroma Cocoa",
-            description: `Coin with a lion in the center of the shield. Ghana coin, published in 1967.
+            subtitle: `Coin with a lion in the center of the shield. Ghana coin, published in 1967.`,
+            description: `
     
             The reverse depicts a runaway lion in the center of a shield divided into four parts, separating the date and the face value. The inscription at the top of the coin is TWENTY
             
@@ -552,7 +558,8 @@ export default {
         // 18
         {
             name: "Coin of the Weimar Republic",
-            description: `The Hindenburg Coin with the coat of arms of the Weimar Republic.
+            subtitle: `The Hindenburg Coin with the coat of arms of the Weimar Republic.`,
+            description: `
     
             On the obverse, in the center of the coin, at the top is the coat of arms of the Weimar Republic. In the center below is the coat of arms of the Hindenburg family. This is a shield divided into 4 fields - in the upper left and lower right corners there is a head of a bull.
             
@@ -573,7 +580,8 @@ export default {
         // 19
         {
             name: "Scientist",
-            description: `Silver Egyptian coin with the image of the god Thoth. Silver Egyptian coin.
+            subtitle: `Silver Egyptian coin with the image of the god Thoth. Silver Egyptian coin.`,
+            description: `
     
             Face value one pound. It has been produced since 1981.
             
@@ -598,7 +606,8 @@ export default {
         // 20
         {
             name: "Lion sedge",
-            description: `Indian coin with the image of a lion Ashoka. Face value 1 one rupee. 1975 edition.
+            subtitle: `Indian coin with the image of a lion Ashoka. Face value 1 one rupee. 1975 edition.`,
+            description: `
     
             It depicts the lion Ashok on his pedestal. It is surrounded by the inscription of the name of the country in two languages, meaning and date, surrounded by stylized stalks of grain.
             
@@ -629,7 +638,8 @@ export default {
         // 21
         {
             name: "Rial",
-            description: `Iranian silver coin with the image of a lion. Face value 5000 five thousand dinars (5 five taps). 1928 year.
+            subtitle: `Iranian silver coin with the image of a lion. Face value 5000 five thousand dinars (5 five taps). 1928 year.`,
+            description: `
     
             It depicts a bust of Reza Shah, whose head is turned to the right.
             
@@ -654,7 +664,8 @@ export default {
         // 22
         {
             name: "ISK",
-            description: `Icelandic coin with a picture of a fish. Face value 1 Icelandic krona
+            subtitle: `Icelandic coin with a picture of a fish. Face value 1 Icelandic krona`,
+            description: `
     
             Initially, the krone consisted of 100 Eire (ISL. EYRIR, MN. CH. ISL. Aurar), but since January 1, 1995 Eire has not been used in monetary circulation.
             
@@ -683,7 +694,8 @@ export default {
         // 23
         {
             name: "Yemen",
-            description: `Coin of South Arabia (Yemen) with the image of a viral boat. Coin in 25 twenty five fils.
+            subtitle: `Coin of South Arabia (Yemen) with the image of a viral boat. Coin in 25 twenty five fils.`,
+            description: `
     
             An octagonal star with dots is depicted on one side of the coin.
             
@@ -718,7 +730,8 @@ export default {
         // 24
         {
             name: "Woman",
-            description: `1 yuan Chinese coin with a picture of a woman. 1986 edition.
+            subtitle: `1 yuan Chinese coin with a picture of a woman. 1986 edition.`,
+            description: `
     
             On one side of the coin is a woman sitting on a stone. Doves fly around her
             
@@ -745,7 +758,8 @@ export default {
         // 25
         {
             name: "Alligator",
-            description: `Chinese coin with the image of an alligator. 5 yuan Chinese coin. 1998 edition.
+            subtitle: `Chinese coin with the image of an alligator. 5 yuan Chinese coin. 1998 edition.`,
+            description: `
     
             It depicts a Chinese alligator on the banks of the river.
             
@@ -766,7 +780,8 @@ export default {
         // 26
         {
             name: "The Golden Panda",
-            description: `Chinese coin with the image of two pandas. 5 yuan Chinese coin. 1993 edition.
+            subtitle: `Chinese coin with the image of two pandas. 5 yuan Chinese coin. 1993 edition.`,
+            description: `
     
             On one side of the coin are two pandas. At the top of the coin are Chinese characters in an arc.
             
@@ -793,7 +808,8 @@ export default {
         // 27
         {
             name: "Costa Rica",
-            description: `Costa - African coin with the image of manatee. Costa Rican coin of 100 columns. It has been produced since 1974.
+            subtitle: `Costa - African coin with the image of manatee. Costa Rican coin of 100 columns. It has been produced since 1974.`,
+            description: `
     
             On one side of the coin is a shield with a sailing ship in front of the mountains. Below is the release date of the coin.
             
@@ -819,7 +835,8 @@ export default {
         // 28
         {
             name: "Year of the children",
-            description: `Costa is an African coin depicting three chicks in a nest. Costa Rican coin of 100 columns. It has been produced since 1979.
+            subtitle: `Costa is an African coin depicting three chicks in a nest. Costa Rican coin of 100 columns. It has been produced since 1979.`,
+            description: `
     
             On one side of the coin are 3 chicks in a nest, symbolizing the International Year of Children.
             
@@ -845,7 +862,8 @@ export default {
         // 29
         {
             name: "Sailboat",
-            description: `Portuguese silver coin with the image of a sailing ship. 
+            subtitle: `Portuguese silver coin with the image of a sailing ship. `,
+            description: `
     
             Portuguese silver coin in 5 five escudos. It has been produced since 1933.
             On one side of the coin is a sailing ship floating in the sea.
